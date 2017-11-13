@@ -3,6 +3,7 @@ import UserLayout from '../layouts/UserLayout';
 import BlankLayout from '../layouts/BlankLayout';
 
 import Analysis from '../routes/Dashboard/Analysis';
+import MapView from '../routes/Dashboard/MapView';
 import Monitor from '../routes/Dashboard/Monitor';
 import Workplace from '../routes/Dashboard/Workplace';
 
@@ -54,6 +55,10 @@ const data = [{
       name: '工作台',
       path: 'workplace',
       component: Workplace,
+    }, {
+      name: 'LBS',
+      path: 'map',
+      component: MapView,
     }],
   }, {
     name: '表单页',
