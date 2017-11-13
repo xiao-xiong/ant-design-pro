@@ -20,13 +20,6 @@
       ]
     }
   },
-  "proxy": {
-    "/api": {
-      "target": "http://jsonplaceholder.typicode.com/",
-      "changeOrigin": true,
-      "pathRewrite": { "^/api" : "" }
-    }
-  },
   "externals": {
     "g2": "G2",
     "g-cloud": "Cloud",
