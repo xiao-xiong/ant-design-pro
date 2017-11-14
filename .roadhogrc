@@ -20,11 +20,6 @@
       ]
     }
   },
-  "externals": {
-    "g2": "G2",
-    "g-cloud": "Cloud",
-    "g2-plugin-slider": "G2.Plugin.slider"
-  },
   "ignoreMomentLocale": true,
   "theme": "./src/theme.js"
 }
