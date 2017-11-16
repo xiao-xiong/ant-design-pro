@@ -1,7 +1,7 @@
 import dynamic from 'dva/dynamic';
 
-const data = [{
-  component: app => dynamic({
+export const getNavData = app => [{
+  component: dynamic({
     app,
     models: () => [
       import('../models/user'),
@@ -18,7 +18,7 @@ const data = [{
     children: [{
       name: '分析页',
       path: 'analysis',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/chart'),
@@ -28,7 +28,7 @@ const data = [{
     }, {
       name: '监控页',
       path: 'monitor',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/monitor'),
@@ -38,7 +38,7 @@ const data = [{
     }, {
       name: '工作台',
       path: 'workplace',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/project'),
@@ -50,7 +50,7 @@ const data = [{
     }, {
       name: 'LBS',
       path: 'map',
-      component: app => dynamic({
+      component: () => dynamic({
         app,
         component: () => import('../routes/Dashboard/MapView'),
       }),
@@ -62,7 +62,7 @@ const data = [{
     children: [{
       name: '基础表单',
       path: 'basic-form',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/form'),
@@ -72,7 +72,7 @@ const data = [{
     }, {
       name: '分步表单',
       path: 'step-form',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/form'),
@@ -81,7 +81,7 @@ const data = [{
       }),
       children: [{
         path: 'confirm',
-        component: app => dynamic({
+        component: dynamic({
           app,
           models: () => [
             import('../models/form'),
@@ -90,7 +90,7 @@ const data = [{
         }),
       }, {
         path: 'result',
-        component: app => dynamic({
+        component: dynamic({
           app,
           models: () => [
             import('../models/form'),
@@ -101,7 +101,7 @@ const data = [{
     }, {
       name: '高级表单',
       path: 'advanced-form',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/form'),
@@ -116,7 +116,7 @@ const data = [{
     children: [{
       name: '查询表格',
       path: 'table-list',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/rule'),
@@ -126,7 +126,7 @@ const data = [{
     }, {
       name: '标准列表',
       path: 'basic-list',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/list'),
@@ -136,7 +136,7 @@ const data = [{
     }, {
       name: '卡片列表',
       path: 'card-list',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/list'),
@@ -146,7 +146,7 @@ const data = [{
     }, {
       name: '搜索列表（项目）',
       path: 'cover-card-list',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/list'),
@@ -156,7 +156,7 @@ const data = [{
     }, {
       name: '搜索列表（应用）',
       path: 'filter-card-list',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/list'),
@@ -166,7 +166,7 @@ const data = [{
     }, {
       name: '搜索列表（文章）',
       path: 'search',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/list'),
@@ -181,7 +181,7 @@ const data = [{
     children: [{
       name: '基础详情页',
       path: 'basic',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/profile'),
@@ -191,7 +191,7 @@ const data = [{
     }, {
       name: '高级详情页',
       path: 'advanced',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/profile'),
@@ -206,14 +206,14 @@ const data = [{
     children: [{
       name: '成功',
       path: 'success',
-      component: app => dynamic({
+      component: dynamic({
         app,
         component: () => import('../routes/Result/Success'),
       }),
     }, {
       name: '失败',
       path: 'fail',
-      component: app => dynamic({
+      component: dynamic({
         app,
         component: () => import('../routes/Result/Error'),
       }),
@@ -225,28 +225,28 @@ const data = [{
     children: [{
       name: '403',
       path: '403',
-      component: app => dynamic({
+      component: dynamic({
         app,
         component: () => import('../routes/Exception/403'),
       }),
     }, {
       name: '404',
       path: '404',
-      component: app => dynamic({
+      component: dynamic({
         app,
         component: () => import('../routes/Exception/404'),
       }),
     }, {
       name: '500',
       path: '500',
-      component: app => dynamic({
+      component: dynamic({
         app,
         component: () => import('../routes/Exception/500'),
       }),
     }],
   }],
 }, {
-  component: app => dynamic({
+  component: dynamic({
     app,
     component: () => import('../layouts/UserLayout'),
   }),
@@ -259,7 +259,7 @@ const data = [{
     children: [{
       name: '登录',
       path: 'login',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/login'),
@@ -269,7 +269,7 @@ const data = [{
     }, {
       name: '注册',
       path: 'register',
-      component: app => dynamic({
+      component: dynamic({
         app,
         models: () => [
           import('../models/register'),
@@ -279,14 +279,14 @@ const data = [{
     }, {
       name: '注册结果',
       path: 'register-result',
-      component: app => dynamic({
+      component: dynamic({
         app,
         component: () => import('../routes/User/RegisterResult'),
       }),
     }],
   }],
 }, {
-  component: app => dynamic({
+  component: dynamic({
     app,
     component: () => import('../layouts/BlankLayout'),
   }),
@@ -298,9 +298,3 @@ const data = [{
     icon: 'book',
   },
 }];
-
-export function getNavData() {
-  return data;
-}
-
-export default data;
